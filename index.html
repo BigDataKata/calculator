@@ -14,37 +14,44 @@
   <div class="display"><input type="textfield" name="ans" value=""></div>
   <br>
 
-  <input type="button" class="button-gray" value="1" onClick="document.calculator.ans.value+='1'">
-  <input type="button" class="button-gray" value="2" onClick="document.calculator.ans.value+='2'">
-  <input type="button" class="button-gray" value="3" onClick="document.calculator.ans.value+='3'">
+  <input type="button" class="button-gray" value="1" onClick="cleanTest();document.calculator.ans.value+='1'">
+  <input type="button" class="button-gray" value="2" onClick="cleanTest();document.calculator.ans.value+='2'">
+  <input type="button" class="button-gray" value="3" onClick="cleanTest();document.calculator.ans.value+='3'">
   <span class="button">
   <input type="button" value="/" onClick="document.calculator.ans.value+='/'">
   </span>
   <br>
 
-  <input type="button" class="button-gray" value="4" onClick="document.calculator.ans.value+='4'">
-  <input type="button" class="button-gray" value="5" onClick="document.calculator.ans.value+='5'">
-  <input type="button" class="button-gray" value="6" onClick="document.calculator.ans.value+='6'">
+  <input type="button" class="button-gray" value="4" onClick="cleanTest();document.calculator.ans.value+='4'">
+  <input type="button" class="button-gray" value="5" onClick="cleanTest();document.calculator.ans.value+='5'">
+  <input type="button" class="button-gray" value="6" onClick="cleanTest();document.calculator.ans.value+='6'">
   <span class="button">
   <input type="button" value="*" onClick="document.calculator.ans.value+='*'">
   </span>
   <br>
 
-  <input type="button" class="button-gray" value="7" onClick="document.calculator.ans.value+='7'">
-  <input type="button" class="button-gray" value="8" onClick="document.calculator.ans.value+='8'">
-  <input type="button" class="button-gray" value="9" onClick="document.calculator.ans.value+='9'">
+  <input type="button" class="button-gray" value="7" onClick="cleanTest();document.calculator.ans.value+='7'">
+  <input type="button" class="button-gray" value="8" onClick="cleanTest();document.calculator.ans.value+='8'">
+  <input type="button" class="button-gray" value="9" onClick="cleanTest();document.calculator.ans.value+='9'">
   <span class="button">
   <input type="button" value="-" onClick="document.calculator.ans.value+='-'">
   </span>
   <br>
 
   <input type="reset" class="button-gray" value="AC" onClick="document.calculator.ans.value+='AC'">
-  <input type="button" class="button-gray" value="0" onClick="document.calculator.ans.value+='0'">
-  <input type="button" class="button-gray" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
+  <input type="button" class="button-gray" value="0" onClick="cleanTest();document.calculator.ans.value+='0'">
+  <input type="button" class="button-gray" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value); document.calculator.setAttribute('solved','true')">
   <span class="button">
   <input type="button" value="+" onClick="document.calculator.ans.value+='+'">
   </span>
   </form>
-
+  <script type="text/javascript">
+    function cleanTest(){
+      if(document.calculator.hasAttribute('solved')){
+        document.calculator.ans.value='';
+        document.calculator.removeAttribute('solved');
+      }
+    }
+  </script>
 </body>
 </html>
